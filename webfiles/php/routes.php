@@ -1,0 +1,35 @@
+<?php
+require_once('router.php');
+require_once('controllers/homeController.php');
+require_once('controllers/productController.php');
+require_once('controllers/AdminController.php');
+
+use Controllers\HomeController;
+use Controllers\ProductController;
+use Controllers\AdminController;
+
+get('/deconnection', function(){
+    session_destroy();
+    header('Location: /');
+});
+
+get('/', function(){
+    new HomeController();
+});
+
+get('/produits', function(){
+    $controller = new ProductController();
+    $controller->get();
+});
+
+get('/connexion', function(){
+    $controller = new AdminController();
+    $controller->get();
+});
+
+post('/connexion', function(){
+    $controller = new AdminController();
+    $controller->connection();
+});
+
+?>
