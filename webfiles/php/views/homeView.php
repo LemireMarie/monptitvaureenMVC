@@ -8,7 +8,8 @@ class HomeView
         $this->main();
     }
 
-    private function main(){
+    private function main(): void
+    {
         require_once("components/header.php");
         require_once("pages/homePage.php");
         require_once("components/footer.php");

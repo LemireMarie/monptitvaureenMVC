@@ -39,12 +39,17 @@ post("/produits/delete", function(){
 
 get('/connexion', function(){
     $controller = new AdminController();
-    $controller->get();
+    $controller->loginPage();
 });
 
 post('/connexion', function(){
     $controller = new AdminController();
-    $controller->connection();
+    $controller->login();
+});
+
+post("/inscription", function(){
+    $controller = new AdminController();
+    $controller->signing();
 });
 
 ?>
