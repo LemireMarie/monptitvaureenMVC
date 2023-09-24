@@ -33,13 +33,13 @@ class AdminController
         }
     }
 
-    public function signing(): void
+    public function signin(): void
     {
         $hash = hash("md5", $_POST["pwd"]);
         $hashed = hash("sha256", $hash);
 
         $model = new AdminModel();
-        $isLogin = $model->signing($_POST["nom"], $hashed);
+        $isLogin = $model->signin($_POST["nom"], $hashed);
         if(!$isLogin){
             session_start();
             $_SESSION["connected"] = TRUE;

@@ -4,7 +4,7 @@ namespace models;
 require_once('models/abstractModel.php');
 
 class ProductModel extends AbstractModel {
-    public function add($nom, $prix, $design, $imageLinks1, $imageLinks2)
+    public function add($nom, $prix, $design, $imageLinks1, $imageLinks2): false|\PDOStatement
     {
         $conn = $this->dbConnect();
 
@@ -13,7 +13,7 @@ class ProductModel extends AbstractModel {
 
         return $conn->query($req);
     }
-    public function update($nom, $prix, $design, $imageLinks1, $imageLinks2, $id)
+    public function update($nom, $prix, $design, $imageLinks1, $imageLinks2, $id): false|\PDOStatement
     {
         $conn = $this->dbConnect();
         $req = "UPDATE products 

@@ -5,7 +5,7 @@ namespace controllers;
 abstract class CommonService
 {
 
-    protected function processFiles()
+    protected function processFiles(): array
     {
         $imageLinks = [];
         $i = 0;

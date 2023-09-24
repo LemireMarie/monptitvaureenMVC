@@ -11,7 +11,7 @@ class AdminModel extends AbstractModel {
         $exec = $this->dbConnect()->query("SELECT * FROM users WHERE nom = '$nom' AND pwd = '$password'");
         return $exec->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function signing($nom, $password): false|array
+    public function signin($nom, $password): false|array
     {
         return $this->dbConnect()->query("INSERT INTO users (nom, pwd) VALUES ('$nom', '$password')");
     }

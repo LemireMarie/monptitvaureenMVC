@@ -49,7 +49,5 @@ post('/connexion', function(){
 
 post("/inscription", function(){
     $controller = new AdminController();
-    $controller->signing();
+    $controller->signin();
 });
-
-?>
