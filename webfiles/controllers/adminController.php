@@ -1,11 +1,11 @@
 <?php
-namespace Controllers;
+namespace controllers;
 
 require_once('views/adminView.php');
 require_once('models/adminModel.php');
 
-use Views\AdminView;
-use Models\AdminModel;
+use models\AdminModel;
+use views\AdminView;
 
 class AdminController
 {

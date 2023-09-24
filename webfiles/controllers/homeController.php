@@ -1,9 +1,9 @@
 <?php
-namespace Controllers;
+namespace controllers;
 
 require_once('views/homeView.php');
 
-use Views\HomeView;
+use views\HomeView;
 
 class HomeController
 {

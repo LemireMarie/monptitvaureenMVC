@@ -1,11 +1,11 @@
 <?php
-namespace Controllers;
+namespace controllers;
 
 require_once('views/productView.php');
 require_once('models/productModel.php');
 
-use Views\ProductView;
-use Models\ProductModel;
+use models\ProductModel;
+use views\ProductView;
 
 class ProductController extends CommonService
 {

@@ -1,9 +1,7 @@
 <?php
-namespace Models;
+namespace models;
 
 require_once('models/abstractModel.php');
-
-use Models\AbstractModel;
 
 class ProductModel extends AbstractModel {
     public function add($nom, $prix, $design, $imageLinks1, $imageLinks2)
