@@ -15,4 +15,12 @@ class ProductModel extends AbstractModel {
 
         return $conn->query($req);
     }
+    public function update($nom, $prix, $design, $imageLinks1, $imageLinks2, $id)
+    {
+        $conn = $this->dbConnect();
+        $req = "UPDATE products 
+                SET nom = '$nom', imgNom = '$imageLinks1', img ='$imageLinks2', prix = '$prix', design = '$design' 
+                WHERE id = $id";
+        return $conn->query($req);
+    }
 }

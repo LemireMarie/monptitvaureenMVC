@@ -16,7 +16,7 @@ if(!empty($_SESSION) && $_SESSION["connected"]){
     <?php
 }
 else{
-    header('Location: ./produits.php');
+    header('Location: /produits');
 }
 require_once('../footer.php');
 ?>

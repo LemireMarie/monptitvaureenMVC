@@ -7,7 +7,7 @@ require_once('models/productModel.php');
 use Views\ProductView;
 use Models\ProductModel;
 
-class ProductController
+class ProductController extends CommonService
 {
     public function get(): void
     {
@@ -19,22 +19,20 @@ class ProductController
 
     public function add(): void
     {
-        $imageLinks = [];
-        $i = 0;
-
-        foreach ($_FILES as $file) {
-            $nom = $file["name"];
-            $path = $file["tmp_name"];
-            $target_file = "assets/src/uploads/" . $nom;
-            $imageLinks[$i] = $target_file;
-            move_uploaded_file($path, "../" . $target_file);
-            $i++;
-        }
+        $imageLinks = $this->processFiles();
 
         $model = new ProductModel();
         $model->add($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1]);
 
         header('Location: /produits');
     }
+
+    public function update(): void
+    {
+        $imageLinks = $this->processFiles();
+        $model = new ProductModel();
+        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1], $_POST["id"]);
+    }
+
 
 }
