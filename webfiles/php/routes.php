@@ -32,6 +32,11 @@ post("/produits/update", function(){
     $controller->update();
 });
 
+post("/produits/delete", function(){
+    $controller = new ProductController();
+    $controller->delete();
+});
+
 get('/connexion', function(){
     $controller = new AdminController();
     $controller->get();
