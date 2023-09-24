@@ -4,7 +4,7 @@ require_once('../header.php');
 if(!empty($_SESSION) && $_SESSION["connected"]){ 
 ?>
         <h1>Formulaire d'ajout de produits</h1>
-        <form action="../../actions/products/scriptAjout.php" method="POST" enctype="multipart/form-data">
+        <form action="/produits/add" method="POST" enctype="multipart/form-data">
             <input type="text" name="nom" placeholder="Le nom du produit">
             <input type="file" name="imgNom" id="imgNom" placeholder="La photo du nom du produit">
             <input type="file" name="img" placeholder="L'image du produit">

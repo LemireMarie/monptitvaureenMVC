@@ -22,6 +22,11 @@ get('/produits', function(){
     $controller->get();
 });
 
+post("/produits/add", function(){
+    $controller = new ProductController();
+    $controller->add();
+});
+
 get('/connexion', function(){
     $controller = new AdminController();
     $controller->get();
