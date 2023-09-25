@@ -6,8 +6,8 @@
                 <nav>
                     <ul>
                         <li><a href="#" title="redirection vers la page d'accueil">Accueil</a></li>
-                        <li><a href="./produits.php" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
-                        <li><a href="./contact.php" title="redirection vers la page de contact">Contact</a></li>
+                        <li><a href="/produits" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
+                        <li><a href="/contact" title="redirection vers la page de contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>

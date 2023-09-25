@@ -23,7 +23,8 @@ class AdminController
 
         $model = new AdminModel();
         $isLogin = $model->login($_POST["nom"], $hashed);
-        if(!$isLogin){
+        //transtypage $isLogin array length = 0 ->FALSE
+        if($isLogin){
             session_start();
             $_SESSION["connected"] = TRUE;
             header('Location: /produits');

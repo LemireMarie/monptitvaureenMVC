@@ -146,17 +146,17 @@ main {
         display: flex;
         flex-direction: column;
 
-        button {
-            margin-left: 15rem;
-            //background-color: aquamarine;
+        a {
+            display: inline-block;
+            margin: 0.5rem 0 0.5rem 15rem;
+            color: #0b3939;
             border: #d6aa3a 2px solid;
+            width: 85px;
         }
 
         .imgNom {
             height: 100px;
             margin: 3rem auto;
-           // background-color: aquamarine;
-            //border: #d6aa3a 2px solid;
         }
 
         .img {

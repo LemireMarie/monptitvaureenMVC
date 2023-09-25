@@ -1,8 +1,6 @@
 <?php
 namespace models;
 
-require_once('models/dbConnect.php');
-
 use Error;
 use PDO;
 
@@ -30,4 +28,11 @@ abstract class AbstractModel
         $preparedDeleteQuery -> bindParam(':productID', $id, PDO::PARAM_INT, 50);
         return $preparedDeleteQuery->execute();
     }
+
+    public function findById($table, $id): false|array
+    {
+        $exec = $this->dbConnect()->query("SELECT * FROM ".$table."WHERE id=".$id);
+        return $exec->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

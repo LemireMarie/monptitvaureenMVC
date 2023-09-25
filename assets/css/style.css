@@ -125,9 +125,12 @@ main article .atelier .content p {
   display: flex;
   flex-direction: column;
 }
-.produits div button {
-  margin-left: 15rem;
+.produits div a {
+  display: inline-block;
+  margin: 0.5rem 0 0.5rem 15rem;
+  color: #0b3939;
   border: #d6aa3a 2px solid;
+  width: 85px;
 }
 .produits div .imgNom {
   height: 100px;
@@ -350,89 +353,92 @@ main article .atelier .content p {
     padding: 0;
   }
 }
-@media screen and (max-width: 429px) {
-  .bg_header {
-    width: 500px;
-  }
-  .bg_header .header ul {
-    display: none;
-    width: 100%;
-  }
-  .bg_header .header ul.visible {
-    display: block;
-    margin: 0 0.1rem;
-  }
-  .bg_header .header ul.visible.visible a {
-    padding: 1rem 5rem;
-    font-size: 2rem;
-  }
-  .bg_header .header img {
-    margin: 2.5rem;
-  }
-  .bg_header button {
-    position: absolute;
-    top: 1rem;
-    right: 20rem;
-    width: 30px;
-    height: 30px;
-    border-top: solid aliceblue 4px;
-    border-bottom: solid aliceblue 4px;
-    border-left: transparent;
-    border-right: transparent;
-    cursor: pointer;
-    background-color: transparent;
-  }
-  .bg_header button::before, .bg_header button::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    transform: translate(-50%, -50%);
-    height: 4px;
-    background-color: aliceblue;
-  }
-  .bg_header button.active {
-    border: none;
-  }
-  .bg_header button.active::before {
-    transform: translate(-50%, -50%) rotateZ(45deg);
-  }
-  .bg_header button.active::after {
-    transform: translate(-50%, -50%) rotateZ(-45deg);
-  }
-  main {
-    background-image: none;
-  }
-  main .img_presentation {
-    flex-direction: column;
-    align-items: center;
-  }
-  main .img_presentation .img1, main .img_presentation .img2, main .img_presentation .img3 {
-    object-fit: contain;
-    margin: 1rem;
-    width: 50%;
-  }
-  main .presentation {
-    font-size: 2.5rem;
-  }
-  main article {
-    padding: 1rem;
-  }
-  main article .atelier .content {
-    flex-direction: column;
-  }
-  main article .atelier .content img {
-    width: auto;
-    margin: auto;
-  }
-  footer {
-    width: 500px;
-  }
-  footer nav #buttons {
-    flex-direction: column;
-  }
-  footer nav #buttons p {
-    padding: 0;
-  }
-}
+/* @media screen and (max-width: 429px) {
+    .bg_header {
+        width: 500px;
+        .header ul {
+            display: none;
+            width: 100%;
+            &.visible{
+                display: block;
+                margin: 0 0.1rem;
+                &.visible a{
+                    padding: 1rem 5rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+        .header img{
+            margin: 2.5rem;
+        }
+
+        button{   
+            position: absolute;
+            top: 1rem;
+            right: 20rem;
+            width: 30px;
+            height: 30px;
+            border-top: solid aliceblue 4px;
+            border-bottom: solid aliceblue 4px;
+            border-left: transparent;
+            border-right: transparent;
+            cursor: pointer;
+            background-color: transparent;
+            &::before, &::after{
+                content: "";
+                position: absolute;
+                width: 30px;
+                transform: translate(-50%,-50%);
+                height: 4px;
+                background-color: aliceblue;
+            }
+        }
+        button.active{
+            border: none;
+            &::before{
+                transform: translate(-50%,-50%) rotateZ(45deg);        
+            }
+            &::after{
+                transform: translate(-50%,-50%) rotateZ(-45deg);        
+            }
+        } 
+    }
+    main {
+        background-image: none;
+        .img_presentation{
+            flex-direction: column;
+            align-items: center;
+                .img1, .img2, .img3 {
+                    object-fit: contain;
+                    margin: 1rem;
+                    width: 50%;
+                }        
+        }
+        .presentation{
+            font-size: 2.5rem;
+        }
+        article{
+            padding: 1rem;
+        }
+        article .atelier .content{
+            flex-direction: column;
+            img{
+                width: auto;
+                margin: auto;
+            }
+        }
+    }
+    footer{
+        width: 500px;
+        nav{
+            #buttons{
+                flex-direction: column;
+            }
+            #buttons p{
+                padding: 0;
+            }
+        } 
+    }
+} */
 
 /*# sourceMappingURL=style.css.map */

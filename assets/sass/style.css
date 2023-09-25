@@ -130,9 +130,12 @@ main article .atelier .content p {
   display: flex;
   flex-direction: column;
 }
-.produits div button {
-  margin-left: 15rem;
+.produits div a {
+  display: inline-block;
+  margin: 0.5rem 0 0.5rem 15rem;
+  color: #0b3939;
   border: #d6aa3a 2px solid;
+  width: 85px;
 }
 .produits div .imgNom {
   height: 100px;

@@ -19,36 +19,26 @@
     ?>
         <div class="savon">
         <?php
-            if(!empty($_SESSION) && $_SESSION["connected"] === TRUE){
+            if($_SESSION && $_SESSION["connected"]){
         ?>
-            <form action="/ajoutProduit" method="POST">
-                <input type="hidden" name="id" value="<?php echo $product["id"]; ?>">
-                <button type="submit">Ajouter</button>
-            </form>
-            <form action="/deleteProduit" method="POST">
-                <input type="hidden" name="id" value="<?php echo $product["id"]; ?>">
-                <button type="submit">Supprimer</button>
-            </form>
-            <form action="/updateProduit" method="POST">
-                <input type="hidden" name="id" value="<?php echo $product["id"]; ?>">
-                <button type="submit">Modifier</button>
-            </form>
-
-            <img class="imgNom" src="<?= $product["imgNom"]; ?>" alt="logo du <?= $product["nom"]; ?>">   
-            <img class="img" src="<?= $product["img"]; ?>" alt="Notre savon le <?= $product["nom"]; ?>">
-            <p class="prix"><?= $product["prix"]; ?> €</p>
-            <p class="design"><?= $product["design"]; ?></p>
+            <a href="/produit/update/<?= $product["id"] ?>">Modifier</a>
+            <a href="/produit/delete/<?= $product["id"] ?>">Supprimer</a>
+            <img class="imgNom" src="<?= $product["imgNom"] ?>" alt="logo du <?= $product["nom"] ?>">   
+            <img class="img" src="<?= $product["img"] ?>" alt="Notre savon le <?= $product["nom"] ?>">
+            <p class="prix"><?= $product["prix"] ?> €</p>
+            <p class="design"><?= $product["design"] ?></p>
         <?php
             }
             else{    
         ?>  
-            <img class="imgNom" src="<?= $product["imgNom"]; ?>" alt="logo du <?= $product["nom"]; ?>">   
-            <img class="img" src="<?= $product["img"]; ?>" alt="Notre savon le <?= $product["nom"]; ?>">
-            <p class="prix"><?= $product["prix"]; ?> €</p>
-            <p class="design"><?= $product["design"]; ?></p>
+            <img class="imgNom" src="<?= $product["imgNom"] ?>" alt="logo du <?= $product["nom"] ?>">   
+            <img class="img" src="<?= $product["img"] ?>" alt="Notre savon le <?= $product["nom"] ?>">
+            <p class="prix"><?= $product["prix"] ?> €</p>
+            <p class="design"><?= $product["design"] ?></p>
         <?php
             }
         ?>               
         </div>
         <?php endforeach; ?> 
+        <?= $_SESSION && $_SESSION["connected"] ? "<a href=\"/produit/add\">Ajouter</a>":"" ?>
     </main>

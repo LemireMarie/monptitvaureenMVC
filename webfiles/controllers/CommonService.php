@@ -13,9 +13,9 @@ abstract class CommonService
         foreach ($_FILES as $file) {
             $nom = $file["name"];
             $path = $file["tmp_name"];
-            $target_file = "assets/src/uploads/" . $nom;
+            $target_file = "/assets/uploads/" . $nom;
             $imageLinks[$i] = $target_file;
-            move_uploaded_file($path, "../" . $target_file);
+            move_uploaded_file($path, ".." . $target_file);
             $i++;
         }
         return $imageLinks;

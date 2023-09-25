@@ -3,9 +3,11 @@ namespace controllers;
 
 require_once('views/productView.php');
 require_once('models/productModel.php');
+require_once('controllers/commonService.php');
 
 use models\ProductModel;
 use views\ProductView;
+use controllers\CommonService;
 
 class ProductController extends CommonService
 {
@@ -13,7 +15,8 @@ class ProductController extends CommonService
     {
         $model = new ProductModel();
         $products = $model->findAll("products");
-        new ProductView($products);
+        $view = new ProductView();
+        $view->main($products);
     }
 
     public function add(): void
@@ -24,19 +27,31 @@ class ProductController extends CommonService
         header('Location: /produits');
     }
 
-    public function update(): void
+    public function update($id): void
     {
         $imageLinks = $this->processFiles();
         $model = new ProductModel();
-        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1], $_POST["id"]);
+        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1], $id);
         header('Location: /produits');
     }
 
-    public function delete(): void
+    public function delete($id): void
     {
         $model = new ProductModel();
-        $model->deleteById("products", $_POST["id"]);
+        $model->deleteById("products", $id);
         header('Location: /produits');
+    }
+
+    public function addPage(): void
+    {
+        $view = new ProductView();
+        $view->form();
+    }
+
+    public function updatePage(): void
+    {
+        $view = new ProductView();
+        $view->form();
     }
 
 }

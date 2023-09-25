@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once('router.php');
 require_once('controllers/homeController.php');
 require_once('controllers/productController.php');
@@ -8,9 +11,9 @@ use controllers\AdminController;
 use controllers\HomeController;
 use controllers\ProductController;
 
-get('/deconnection', function(){
+get('/deconnexion', function(){
     session_destroy();
-    header('Location: /');
+    header('Location: /produits');
 });
 
 get('/', function(){
@@ -22,19 +25,30 @@ get('/produits', function(){
     $controller->get();
 });
 
-post("/produits/add", function(){
+post('/produit/add', function(){
     $controller = new ProductController();
     $controller->add();
 });
 
-post("/produits/update", function(){
+post('/produit/update/$id', function($id){
     $controller = new ProductController();
-    $controller->update();
+    $controller->update($id);
 });
 
-post("/produits/delete", function(){
+
+get('/produit/add', function(){
     $controller = new ProductController();
-    $controller->delete();
+    $controller->addPage();
+});
+
+get('/produit/update/$id', function($id){
+    $controller = new ProductController();
+    $controller->updatePage($id);
+});
+
+get('/produit/delete/$id', function($id){
+    $controller = new ProductController();
+    $controller->delete($id);
 });
 
 get('/connexion', function(){
@@ -47,7 +61,7 @@ post('/connexion', function(){
     $controller->login();
 });
 
-post("/inscription", function(){
+post('/inscription', function(){
     $controller = new AdminController();
     $controller->signin();
 });

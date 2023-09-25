@@ -1,9 +1,7 @@
-<?php
-    if ($error) echo "<p>".$error."</p>";
-?>
+<?= $error ? "<p>".$error."</p>" : "" ?>
 
 <h1>Formulaire de connexion :</h1>
-<form action="../../actions/users/scriptConnect.php" method="POST">
+<form action="/connexion" method="POST">
     <p>
         <input type="text" name="nom" id="nom" placeholder="votre prénom">
     </p>

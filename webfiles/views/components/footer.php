@@ -2,8 +2,12 @@
         <div class="footer">
             <nav>      
                 <div id="buttons">
-                    <p><a href="../users/connect.php">Connexion</a></p>
-                    <p><a href="../users/inscriptionForm.php">Inscription</a></p>
+                    <?php if (!$_SESSION || !$_SESSION["connected"]){ ?>
+                        <p><a href="/connexion">Connexion</a></p>
+                        <p><a href="/inscription">Inscription</a></p>
+                    <?php } else { ?>
+                        <p><a href="/deconnexion">Deconnexion</a></p>
+                    <?php } ?>
                     <p><a href="#">Mentions légales</a></p>        
                     <p><a href="#">Partenaires</a></p>
                 </div>
