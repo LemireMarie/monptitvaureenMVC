@@ -30,8 +30,22 @@ class ProductController extends CommonService
     public function update($id): void
     {
         $imageLinks = $this->processFiles();
+        $imageNomLink = $imageLinks[0];
+        $imageLink = $imageLinks[1];
+        
         $model = new ProductModel();
-        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1], $id);
+
+        $model->findById("products", $id);
+        $product = $model->findById("products", $id);
+        if($imageNomLink == "/assets/uploads/"){
+            $imageNomLink = $product["imgNom"];
+        }
+        if($imageLink == "/assets/uploads/"){
+            $imageLink = $product["img"];
+        }
+
+
+        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageNomLink, $imageLink, $id);
         header('Location: /produits');
     }
 
@@ -45,13 +59,16 @@ class ProductController extends CommonService
     public function addPage(): void
     {
         $view = new ProductView();
-        $view->form();
+        $view->form([]);
     }
 
-    public function updatePage(): void
+    public function updatePage($id): void
     {
+        $model = new ProductModel();
+        $product = $model->findById("products", $id);
         $view = new ProductView();
-        $view->form();
+        $view->form($product);
+
     }
 
 }

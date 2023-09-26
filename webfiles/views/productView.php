@@ -11,7 +11,7 @@ class ProductView
         require_once("components/footer.php");
     }
 
-    public function form(): void
+    public function form(array $products): void
     {
         require_once("components/header.php");
         require_once("components/productForm.php");

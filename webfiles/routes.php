@@ -6,10 +6,12 @@ require_once('router.php');
 require_once('controllers/homeController.php');
 require_once('controllers/productController.php');
 require_once('controllers/AdminController.php');
+require_once('controllers/contactController.php');
 
 use controllers\AdminController;
 use controllers\HomeController;
 use controllers\ProductController;
+use controllers\ContactController;
 
 get('/deconnexion', function(){
     session_destroy();
@@ -64,4 +66,8 @@ post('/connexion', function(){
 post('/inscription', function(){
     $controller = new AdminController();
     $controller->signin();
+});
+get('/contact', function() {
+    $controller = new ContactController();
+    $controller->get();
 });

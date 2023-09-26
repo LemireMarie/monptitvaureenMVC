@@ -7,6 +7,6 @@
     <meta name="description" content="Site vitrine pour la savonnerie Mon p'tit vauréen">
     <link rel="shortcut icon" href="/assets/img/logo2.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="/assets/js/burgerMenu_2.js" defer></script>
+    <script src="/assets/js/script.js" defer></script>
     <title>Mon P'tit Vauréen</title>
 </head>

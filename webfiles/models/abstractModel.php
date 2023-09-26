@@ -31,8 +31,10 @@ abstract class AbstractModel
 
     public function findById($table, $id): false|array
     {
-        $exec = $this->dbConnect()->query("SELECT * FROM ".$table."WHERE id=".$id);
-        return $exec->fetchAll(PDO::FETCH_ASSOC);
+        $exec = $this->dbConnect()->prepare("SELECT * FROM ".$table." WHERE id=:id");
+        $exec->bindParam(':id', $id, PDO::PARAM_INT);
+        $exec->execute();
+        return $exec->fetch(PDO::FETCH_ASSOC);
     }
 
 }
