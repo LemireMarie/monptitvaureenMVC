@@ -1,7 +1,7 @@
 <?php
 namespace controllers;
 
-require_once('views/homeView.php');
+require_once('./views/homeView.php');
 
 use views\HomeView;
 

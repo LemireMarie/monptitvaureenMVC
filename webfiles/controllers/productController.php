@@ -1,9 +1,9 @@
 <?php
 namespace controllers;
 
-require_once('views/productView.php');
-require_once('models/productModel.php');
-require_once('controllers/commonService.php');
+require_once('./views/productView.php');
+require_once('./models/productModel.php');
+require_once('./controllers/commonService.php');
 
 use models\ProductModel;
 use views\ProductView;
@@ -68,7 +68,6 @@ class ProductController extends CommonService
         $product = $model->findById("products", $id);
         $view = new ProductView();
         $view->form($product);
-
     }
 
 }

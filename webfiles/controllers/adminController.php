@@ -1,8 +1,8 @@
 <?php
 namespace controllers;
 
-require_once('views/adminView.php');
-require_once('models/adminModel.php');
+require_once('./views/adminView.php');
+require_once('./models/adminModel.php');
 
 use models\AdminModel;
 use views\AdminView;

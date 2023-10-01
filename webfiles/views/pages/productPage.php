@@ -13,32 +13,13 @@
             </div>
         </div>
     </header>
-    <main class="produits">
-    <?php 
-        foreach($products as $product):
-    ?>
-        <div class="savon">
-        <?php
-            if($_SESSION && $_SESSION["connected"]){
-        ?>
-            <a href="/produit/update/<?= $product["id"] ?>">Modifier</a>
-            <a href="/produit/delete/<?= $product["id"] ?>">Supprimer</a>
-            <img class="imgNom" src="<?= $product["imgNom"] ?>" alt="logo du <?= $product["nom"] ?>">   
-            <img class="img" src="<?= $product["img"] ?>" alt="Notre savon le <?= $product["nom"] ?>">
-            <p class="prix"><?= $product["prix"] ?> €</p>
-            <p class="design"><?= $product["design"] ?></p>
-        <?php
-            }
-            else{    
-        ?>  
-            <img class="imgNom" src="<?= $product["imgNom"] ?>" alt="logo du <?= $product["nom"] ?>">   
-            <img class="img" src="<?= $product["img"] ?>" alt="Notre savon le <?= $product["nom"] ?>">
-            <p class="prix"><?= $product["prix"] ?> €</p>
-            <p class="design"><?= $product["design"] ?></p>
-        <?php
-            }
-        ?>               
-        </div>
-        <?php endforeach; ?> 
-        <?= $_SESSION && $_SESSION["connected"] ? "<a href=\"/produit/add\">Ajouter</a>":"" ?>
+    <main>
+    <?= $_SESSION && $_SESSION["connected"] ? "<a class='add' href=\"/produit/add\">Ajouter</a>" : "" ?>
+        <div class="produits">
+        <?php 
+        //$products provient de la class ProductView
+        foreach ($products as $product) {
+                require("views/components/product.php");
+         } ?>
+    </div>
     </main>

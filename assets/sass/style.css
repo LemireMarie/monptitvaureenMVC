@@ -4,9 +4,14 @@
   padding: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .bg_header {
   background-color: #0b3939;
   border-bottom: #d6aa3a solid 2px;
+  min-height: 6.5rem;
 }
 .bg_header .header {
   display: flex;
@@ -20,24 +25,33 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
-.bg_header .header ul {
+.bg_header .header nav {
+  width: 100%;
+}
+.bg_header .header nav ul {
   margin-left: 10rem;
   display: flex;
   font-size: 3rem;
 }
-.bg_header .header ul li {
+.bg_header .header nav ul li {
   list-style: none;
   text-align: center;
-  padding: 3rem 9%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 6%;
 }
-.bg_header .header ul li a {
+.bg_header .header nav ul li a {
   color: #d6aa3a;
   display: block;
   text-decoration: none;
   cursor: pointer;
-  width: 15rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3rem 0;
 }
-.bg_header .header ul li a:hover {
+.bg_header .header nav ul li a:hover {
   text-decoration: underline;
 }
 
@@ -68,6 +82,17 @@
 
 main {
   /*accueil*/
+}
+main .add {
+  display: inline-block;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #0b3939;
+  color: #d6aa3a;
+  border: #d6aa3a 2px solid;
+  width: 85px;
+  cursor: pointer;
 }
 main .img_presentation {
   display: flex;
@@ -127,7 +152,25 @@ main article .atelier .content p {
 }
 
 /*produits*/
-.produits h2, .produits li, .produits p {
+.produits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.produits a {
+  display: inline-block;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #0b3939;
+  color: #d6aa3a;
+  border: #d6aa3a 2px solid;
+  width: 85px;
+  cursor: pointer;
+}
+.produits h2,
+.produits li,
+.produits p {
   color: #0b3939;
   margin: auto;
   text-align: center;
@@ -142,28 +185,27 @@ main article .atelier .content p {
 .produits p {
   width: 70%;
 }
-.produits div {
+.produits .savon {
   display: flex;
   flex-direction: column;
   margin: 2rem;
+  width: 40%;
 }
-.produits div a {
-  display: inline-block;
-  margin: 0.5rem 0 0.5rem 15rem;
-  color: #0b3939;
-  border: #d6aa3a 2px solid;
-  width: 85px;
-  cursor: pointer;
-}
-.produits div .imgNom {
+.produits .savon .imgNom {
   height: 100px;
   margin: 3rem auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
 }
-.produits div .img {
+.produits .savon .img {
   height: 150px;
   margin: 3rem auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
 }
-.produits div .prix {
+.produits .savon .prix {
   display: block;
   max-width: 200px;
   margin: auto;
@@ -173,14 +215,14 @@ main article .atelier .content p {
   font-size: 1.5rem;
   padding: 3rem;
 }
-.produits div .design {
+.produits .savon .design {
   display: block;
   color: #0b3939;
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 500px;
   text-align: center;
   margin: auto;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  white-space: break-spaces;
 }
 
 p#scroll {
@@ -224,6 +266,8 @@ p#scroll.visible {
   list-style: none;
 }
 .contact .liste ul li a {
+  background-color: transparent;
+  border: none;
   text-decoration: none;
   color: #d6aa3a;
   font-size: 2rem;
@@ -242,15 +286,17 @@ p#scroll.visible {
   .bg_header {
     width: 100%;
   }
-  .bg_header .header ul {
+  .bg_header .header nav ul {
     display: none;
-    width: 100%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
-  .bg_header .header ul.visible {
+  .bg_header .header nav ul.visible {
     display: block;
     margin-left: 3rem;
   }
-  .bg_header .header ul.visible.visible a {
+  .bg_header .header nav ul.visible.visible a {
     padding: 1rem 5rem;
     font-size: 2rem;
   }
@@ -260,7 +306,7 @@ p#scroll.visible {
   .bg_header button {
     position: absolute;
     top: 2.5rem;
-    right: 8rem;
+    right: 2rem;
     width: 30px;
     height: 30px;
     border-top: solid aliceblue 4px;
@@ -290,7 +336,9 @@ p#scroll.visible {
   main .img_presentation .img2 {
     width: 10%;
   }
-  main .img_presentation .img1, main .img_presentation .img2, main .img_presentation .img3 {
+  main .img_presentation .img1,
+main .img_presentation .img2,
+main .img_presentation .img3 {
     margin: 2rem;
   }
   main .presentation {
@@ -320,15 +368,17 @@ p#scroll.visible {
   .bg_header {
     width: 100%;
   }
-  .bg_header .header ul {
+  .bg_header .header nav ul {
     display: none;
-    width: 100%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
-  .bg_header .header ul.visible {
+  .bg_header .header nav ul.visible {
     display: block;
     margin-left: 3rem;
   }
-  .bg_header .header ul.visible.visible a {
+  .bg_header .header nav ul.visible.visible a {
     padding: 1rem 5rem;
     font-size: 2rem;
   }
@@ -338,7 +388,7 @@ p#scroll.visible {
   .bg_header button {
     position: absolute;
     top: 2.5rem;
-    right: 8rem;
+    right: 2rem;
     width: 30px;
     height: 30px;
     border-top: solid aliceblue 4px;
@@ -372,7 +422,9 @@ p#scroll.visible {
     flex-direction: column;
     align-items: center;
   }
-  main .img_presentation .img1, main .img_presentation .img2, main .img_presentation .img3 {
+  main .img_presentation .img1,
+main .img_presentation .img2,
+main .img_presentation .img3 {
     -o-object-fit: contain;
        object-fit: contain;
     margin: 1rem;
@@ -393,6 +445,9 @@ p#scroll.visible {
   }
   main article .atelier .content p {
     padding-left: 0;
+  }
+  .produits .savon {
+    width: 100%;
   }
   .contact .liste {
     width: 40%;
@@ -415,15 +470,17 @@ p#scroll.visible {
     display: flex;
     flex-direction: column;
   }
-  .bg_header .header ul {
+  .bg_header .header nav ul {
     display: none;
-    width: 100%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
-  .bg_header .header ul.visible {
+  .bg_header .header nav ul.visible {
     display: block;
     margin: 0 0.1rem;
   }
-  .bg_header .header ul.visible.visible a {
+  .bg_header .header nav ul.visible.visible a {
     padding: 1rem 5rem;
     font-size: 2rem;
   }
@@ -433,7 +490,7 @@ p#scroll.visible {
   .bg_header button {
     position: absolute;
     top: 1rem;
-    left: 25rem;
+    right: 2rem;
     width: 30px;
     height: 30px;
     border-top: solid aliceblue 4px;
@@ -467,7 +524,9 @@ p#scroll.visible {
     flex-direction: column;
     align-items: center;
   }
-  main .img_presentation .img1, main .img_presentation .img2, main .img_presentation .img3 {
+  main .img_presentation .img1,
+main .img_presentation .img2,
+main .img_presentation .img3 {
     -o-object-fit: contain;
        object-fit: contain;
     margin: 1rem;
@@ -486,10 +545,14 @@ p#scroll.visible {
     width: auto;
     margin: auto;
   }
-  main.produits div .imgNom {
+  main.produits div .savon {
+    width: 100%;
+  }
+  main.produits div .savon .imgNom {
     margin: 0;
     -o-object-fit: contain;
        object-fit: contain;
+    width: 100%;
   }
   main .contact {
     flex-direction: column;
@@ -503,6 +566,9 @@ p#scroll.visible {
   }
   footer {
     width: 470px;
+  }
+  footer nav {
+    width: 100%;
   }
   footer nav #buttons {
     flex-direction: column;

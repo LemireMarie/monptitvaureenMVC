@@ -1,7 +1,7 @@
 <?php
 namespace models;
 
-require_once('models/abstractModel.php');
+require_once('./models/abstractModel.php');
 use PDO;
 
 class ProductModel extends AbstractModel {

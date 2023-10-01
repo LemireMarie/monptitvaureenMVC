@@ -1,7 +1,7 @@
 <?php
 namespace controllers;
 
-require_once('views/contactView.php');
+require_once('./views/contactView.php');
 
 use views\ContactView;
 

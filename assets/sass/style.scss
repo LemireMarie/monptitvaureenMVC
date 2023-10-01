@@ -1,15 +1,19 @@
 @import url(../../src/fonts/HelveticaNeueLTPro-Bd.otf);
-$primary:#0b3939;
-$secondary:#d6aa3a;
+$primary: #0b3939;
+$secondary: #d6aa3a;
+
 * {
     margin: 0;
     padding: 0;
+}
+.hidden {
+    display: none;
 }
 
 .bg_header {
     background-color: $primary;
     border-bottom: $secondary solid 2px;
-
+    min-height: 6.5rem;
     .header {
         display: flex;
         max-width: 100%;
@@ -22,23 +26,30 @@ $secondary:#d6aa3a;
             object-fit: contain;
         }
 
-        ul {
+        nav {
+            width: 100%;
+            ul {
             margin-left: 10rem;
-            display: flex;
-            font-size: 3rem;
+                display: flex;
+                font-size: 3rem;
 
-            li {
-                list-style: none;
-                text-align: center;
-                padding: 3rem 9%;
-                a {
-                    color: $secondary;
-                    display: block;
-                    text-decoration: none;
-                    cursor: pointer;
-                    width: 15rem;
-                    &:hover {
-                        text-decoration: underline;
+                li {
+                    list-style: none;
+                    text-align: center;
+                    width: fit-content;
+                    padding: 0 6%;
+
+                    a {
+                        color: $secondary;
+                        display: block;
+                        text-decoration: none;
+                        cursor: pointer;
+                        width: fit-content;
+                        padding: 3rem 0;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
@@ -51,29 +62,43 @@ $secondary:#d6aa3a;
     background-color: $primary;
     text-align: center;
 
-    nav p{
+    nav p {
         color: $secondary;
         font-size: 1rem;
         padding: 1rem;
     }
-    #buttons{
-      display: flex;
-      justify-content: center;  
+
+    #buttons {
+        display: flex;
+        justify-content: center;
     }
-    #buttons a{
+
+    #buttons a {
         display: block;
         text-decoration: none;
         color: $secondary;
         font-size: 2rem;
         padding: 1rem;
+
         &:hover {
             text-decoration: underline;
         }
     }
-    
+
 }
 
 main {
+    .add {
+        display: inline-block;
+        margin: auto;
+        padding: 0.5rem;
+        text-align: center;
+        background-color: $primary;
+        color: $secondary;
+        border: $secondary 2px solid;
+        width: 85px;
+        cursor: pointer;
+    }
     /*accueil*/
     .img_presentation {
         display: flex;
@@ -141,7 +166,23 @@ main {
 
 /*produits*/
 .produits {
-    h2, li, p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+        display: inline-block;
+        margin: auto;
+        padding: 0.5rem;
+        text-align: center;
+        background-color: $primary;
+        color: $secondary;
+        border: $secondary 2px solid;
+        width: 85px;
+        cursor: pointer;
+    }
+    h2,
+    li,
+    p {
         color: $primary;
         margin: auto;
         text-align: center;
@@ -150,33 +191,33 @@ main {
         font-size: 1rem;
         padding: 1rem;
     }
-    h2{
+
+    h2 {
         font-size: 1.5rem;
     }
-    p{
+
+    p {
         width: 70%;
     }
-    div {
+
+    .savon {
         display: flex;
         flex-direction: column;
         margin: 2rem;
-        a {
-            display: inline-block;
-            margin: 0.5rem 0 0.5rem 15rem;
-            color: $primary;
-            border: $secondary 2px solid;
-            width: 85px;
-            cursor: pointer;
-        }
+        width: 40%;
 
         .imgNom {
             height: 100px;
             margin: 3rem auto;
+            object-fit: contain;
+            max-width: 100%;
         }
 
         .img {
             height: 150px;
             margin: 3rem auto;
+            object-fit: contain;
+            max-width: 100%;
         }
 
         .prix {
@@ -187,23 +228,23 @@ main {
             color: $primary;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.5rem;
-            padding: 3rem;    
+            padding: 3rem;
         }
-        
-        .design{
+
+        .design {
             display: block;
             color: $primary;
             font-family: Arial, Helvetica, sans-serif;
-            max-width: 500px;
             text-align: center;
-            margin: auto; 
-            font-size: 1.5rem;           
-           
+            margin: auto;
+            font-size: 1rem;
+            white-space: break-spaces;
         }
     }
 }
+
 //Retour haut de page :
-p#scroll{
+p#scroll {
     position: fixed;
     transform: rotate(-90deg);
     padding: 1rem;
@@ -217,9 +258,11 @@ p#scroll{
     display: none;
     cursor: pointer;
 }
-p#scroll.visible{
+
+p#scroll.visible {
     display: block;
 }
+
 /*contact*/
 .contact {
     display: flex;
@@ -235,21 +278,26 @@ p#scroll.visible{
             color: $secondary;
             font-size: 2rem;
         }
+
         ul {
             li {
                 color: $primary;
                 font-size: 1.5rem;
                 padding: 0.5rem;
                 list-style: none;
-                a{
+
+                a {
+                    background-color: transparent;
+                    border: none;
                     text-decoration: none;
                     color: $secondary;
                     font-size: 2rem;
                     padding: 1rem;
                     cursor: pointer;
+
                     &:hover {
                         text-decoration: underline;
-                    } 
+                    }
                 }
             }
         }
@@ -264,26 +312,29 @@ p#scroll.visible{
 @media screen and (min-width: 829px) and (max-width: 1212px) {
     .bg_header {
         width: 100%;
-        .header ul {
+
+        .header nav ul {
             display: none;
-            width: 100%;
-            &.visible{
+            width: fit-content;
+            &.visible {
                 display: block;
                 margin-left: 3rem;
-                &.visible a{
+
+                &.visible a {
                     padding: 1rem 5rem;
                     font-size: 2rem;
                 }
             }
         }
-        .header img{
+
+        .header img {
             margin-left: 2rem;
         }
-        
-        button{   
+
+        button {
             position: absolute;
-            top:2.5rem;
-            right: 8rem;
+            top: 2.5rem;
+            right: 2rem;
             width: 30px;
             height: 30px;
             border-top: solid aliceblue 4px;
@@ -292,85 +343,106 @@ p#scroll.visible{
             border-right: transparent;
             cursor: pointer;
             background-color: transparent;
-            &::before, &::after{
+
+            &::before,
+            &::after {
                 content: "";
                 position: absolute;
                 width: 30px;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
                 height: 4px;
                 background-color: aliceblue;
             }
         }
-        button.active{
+
+        button.active {
             border: none;
-            &::before{
-                transform: translate(-50%,-50%) rotateZ(45deg);        
+
+            &::before {
+                transform: translate(-50%, -50%) rotateZ(45deg);
             }
-            &::after{
-                transform: translate(-50%,-50%) rotateZ(-45deg);        
+
+            &::after {
+                transform: translate(-50%, -50%) rotateZ(-45deg);
             }
-        } 
-    }
-    main {
-        .img_presentation{
-                .img2{
-                    width: 10%;
-                }
-                .img1, .img2, .img3 {
-                    margin: 2rem;
-                }        
         }
-        .presentation{
+    }
+
+    main {
+        .img_presentation {
+            .img2 {
+                width: 10%;
+            }
+
+            .img1,
+            .img2,
+            .img3 {
+                margin: 2rem;
+            }
+        }
+
+        .presentation {
             font-size: 2.5rem;
         }
-        article{
+
+        article {
             padding: 5rem;
         }
-        article .atelier .content{
+
+        article .atelier .content {
             flex-direction: column;
-            img{
+
+            img {
                 width: auto;
                 margin: auto;
             }
-            p{
+
+            p {
                 padding-left: 0;
             }
         }
     }
-    footer{
-        nav{
-            #buttons{
+
+    footer {
+        nav {
+            #buttons {
                 flex-direction: column;
             }
-            #buttons p{
+
+            #buttons p {
                 padding: 0;
             }
-        } 
+        }
     }
 }
+
 @media screen and (min-width: 430px) and (max-width: 828px) {
     .bg_header {
         width: 100%;
-        .header ul {
+
+        .header nav ul {
             display: none;
-            width: 100%;
-            &.visible{
+            width: fit-content;
+
+            &.visible {
                 display: block;
                 margin-left: 3rem;
-                &.visible a{
+
+                &.visible a {
                     padding: 1rem 5rem;
                     font-size: 2rem;
                 }
             }
         }
-        .header img{
+
+        .header img {
             margin-left: 2rem;
         }
-        
-        button{   
+
+        button {
             position: absolute;
-            top:2.5rem;
-            right: 8rem;
+            top: 2.5rem;
+            right: 2rem;
             width: 30px;
             height: 30px;
             border-top: solid aliceblue 4px;
@@ -379,99 +451,130 @@ p#scroll.visible{
             border-right: transparent;
             cursor: pointer;
             background-color: transparent;
-            &::before, &::after{
+
+            &::before,
+            &::after {
                 content: "";
                 position: absolute;
                 width: 30px;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
                 height: 4px;
                 background-color: aliceblue;
             }
         }
-        button.active{
+
+        button.active {
             border: none;
-            &::before{
-                transform: translate(-50%,-50%) rotateZ(45deg);        
+
+            &::before {
+                transform: translate(-50%, -50%) rotateZ(45deg);
             }
-            &::after{
-                transform: translate(-50%,-50%) rotateZ(-45deg);        
+
+            &::after {
+                transform: translate(-50%, -50%) rotateZ(-45deg);
             }
-        } 
+        }
     }
+
     //accueil
     main {
         background-image: none;
-        .img_presentation{
+
+        .img_presentation {
             flex-direction: column;
             align-items: center;
-                .img1, .img2, .img3 {
-                    object-fit: contain;
-                    margin: 1rem;
-                    width: 50%;
-                }        
+
+            .img1,
+            .img2,
+            .img3 {
+                object-fit: contain;
+                margin: 1rem;
+                width: 50%;
+            }
         }
-        .presentation{
+
+        .presentation {
             font-size: 2.5rem;
         }
-        article{
+
+        article {
             padding: 5rem;
         }
-        article .atelier .content{
+
+        article .atelier .content {
             flex-direction: column;
-            img{
+
+            img {
                 width: auto;
                 margin: auto;
             }
-            p{
+
+            p {
                 padding-left: 0;
             }
         }
     }
+    //produits
+    .produits{
+        .savon{
+            width: 100%;
+        }
+    }
+
     //contact
-    .contact .liste{
+    .contact .liste {
         width: 40%;
     }
-    .contact #map{
+
+    .contact #map {
         margin: 7rem 8rem 10rem 2rem;
     }
-    footer{
-        nav{
-            #buttons{
+
+    footer {
+        nav {
+            #buttons {
                 flex-direction: column;
-                #buttons p{
+
+                #buttons p {
                     padding: 0;
                 }
             }
-        } 
+        }
     }
 }
+
 @media screen and (max-width: 429px) {
     .bg_header {
-        .header{
+        .header {
             display: flex;
             flex-direction: column;
         }
+
         width: 470px;
-        .header ul {
+
+        .header nav ul {
             display: none;
-            width: 100%;
-            &.visible{
+            width: fit-content;
+
+            &.visible {
                 display: block;
                 margin: 0 0.1rem;
-                &.visible a{
+
+                &.visible a {
                     padding: 1rem 5rem;
                     font-size: 2rem;
                 }
             }
         }
-        .header img{
+
+        .header img {
             margin: 1rem 2.5rem;
         }
-        
-        button{   
+
+        button {
             position: absolute;
             top: 1rem;
-            left: 25rem;
+            right: 2rem;
             width: 30px;
             height: 30px;
             border-top: solid aliceblue 4px;
@@ -480,73 +583,101 @@ p#scroll.visible{
             border-right: transparent;
             cursor: pointer;
             background-color: transparent;
-            &::before, &::after{
+
+            &::before,
+            &::after {
                 content: "";
                 position: absolute;
                 width: 30px;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
                 height: 4px;
                 background-color: aliceblue;
             }
         }
-        button.active{
+
+        button.active {
             border: none;
-            &::before{
-                transform: translate(-50%,-50%) rotateZ(45deg);        
+
+            &::before {
+                transform: translate(-50%, -50%) rotateZ(45deg);
             }
-            &::after{
-                transform: translate(-50%,-50%) rotateZ(-45deg);        
+
+            &::after {
+                transform: translate(-50%, -50%) rotateZ(-45deg);
             }
-        } 
+        }
     }
+
     main {
+        //accueil
         background-image: none;
-        .img_presentation{
+
+        .img_presentation {
             flex-direction: column;
             align-items: center;
-                .img1, .img2, .img3 {
-                    object-fit: contain;
-                    margin: 1rem;
-                    width: 50%;
-                }        
+
+            .img1,
+            .img2,
+            .img3 {
+                object-fit: contain;
+                margin: 1rem;
+                width: 50%;
+            }
         }
-        .presentation{
+
+        .presentation {
             font-size: 2.5rem;
         }
-        article{
+
+        article {
             padding: 1rem;
         }
-        article .atelier .content{
+
+        article .atelier .content {
             flex-direction: column;
-            img{
+
+            img {
                 width: auto;
                 margin: auto;
             }
         }
-        &.produits div .imgNom{
+        //produits
+        &.produits div .savon{
+            width: 100%;
+            .imgNom {
                 margin: 0;
                 object-fit: contain;
+                width: 100%;
+            }
+    
         }
-        .contact{
+
+        .contact {
             flex-direction: column;
-            .liste{
+
+            .liste {
                 padding: 1rem;
             }
-            #map{
+
+            #map {
                 width: 465px;
                 margin: 1rem 0;
             }
         }
     }
-    footer{
+
+    footer {
         width: 470px;
-        nav{
-            #buttons{
+
+        nav {
+            width: 100%;
+            #buttons {
                 flex-direction: column;
             }
-            #buttons p{
+
+            #buttons p {
                 padding: 0;
             }
-        } 
+        }
     }
-} 
+}

@@ -2,11 +2,11 @@
 
 session_start();
 
-require_once('router.php');
-require_once('controllers/homeController.php');
-require_once('controllers/productController.php');
-require_once('controllers/AdminController.php');
-require_once('controllers/contactController.php');
+require_once('./router.php');
+require_once('./controllers/homeController.php');
+require_once('./controllers/productController.php');
+require_once('./controllers/adminController.php');
+require_once('./controllers/contactController.php');
 
 use controllers\AdminController;
 use controllers\HomeController;

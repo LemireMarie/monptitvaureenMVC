@@ -1,9 +1,15 @@
 let burger = document.createElement("button");
 let nav = document.querySelector("nav");
 let menu = document.querySelector("ul");
-
-window.addEventListener("resize", () => {
-    if(window.innerWidth < 1212){
+const imgHeader = document.querySelector(".header img");
+const callback = () => {
+    if (window.innerWidth < 580){
+        imgHeader.classList.add("hidden")
+    }
+    else{
+        imgHeader.classList.remove("hidden")
+    }
+    if(window.innerWidth < 1212 ){
         burger.classList.add("visible");
         nav.appendChild(burger);
 
@@ -11,18 +17,11 @@ window.addEventListener("resize", () => {
     else{
         burger.remove();
     }
-});
+}
 
-window.addEventListener("load", () => {
-    if(window.innerWidth < 1212){
-        burger.classList.add("visible");
-        nav.appendChild(burger);
+window.addEventListener("resize", callback);
 
-    }
-    else{
-        burger.remove();
-    }
-});
+window.addEventListener("load", callback);
 
 burger.addEventListener("click", () => {
     menu.classList.toggle("visible");
