@@ -121,7 +121,7 @@ main .img_presentation .img3 {
 main .presentation {
   font-size: 2.5rem;
   text-align: center;
-  color: #d6aa3a;
+  color: #976E04;
 }
 main article {
   font-size: 1.5rem;
@@ -256,7 +256,7 @@ p#scroll.visible {
 .contact .liste h2 {
   text-decoration: underline;
   padding: 3rem 0;
-  color: #d6aa3a;
+  color: #976E04;
   font-size: 2rem;
 }
 .contact .liste ul li {
@@ -269,7 +269,7 @@ p#scroll.visible {
   background-color: transparent;
   border: none;
   text-decoration: none;
-  color: #d6aa3a;
+  color: #976E04;
   font-size: 2rem;
   padding: 1rem;
   cursor: pointer;

@@ -4,7 +4,7 @@
                 <div id="buttons">
                     <?php if (!$_SESSION || !$_SESSION["connected"]){ ?>
                         <p><a href="/connexion">Connexion</a></p>
-                        <p><a href="/inscription">Inscription</a></p>
+                        <!-- <p><a href="/inscription">Inscription</a></p> -->
                     <?php } else { ?>
                         <p><a href="/deconnexion">Deconnexion</a></p>
                     <?php } ?>
