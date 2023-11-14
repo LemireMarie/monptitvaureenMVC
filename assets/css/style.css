@@ -1,6 +1,125 @@
 @import url(../../src/fonts/HelveticaNeueLTPro-Bd.otf);
+form {
+  width: 30vw;
+  min-width: 500px;
+  align-self: center;
+  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1), 0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  padding: 40px;
+}
+
+#payment-message {
+  color: rgb(105, 115, 134);
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+#payment-element {
+  margin-bottom: 24px;
+}
+
+/* Buttons and links */
+button {
+  background: #5469d4;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+
+button:hover {
+  filter: contrast(115%);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* spinner/processing state, errors */
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+}
+
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  transform: translateZ(0);
+}
+
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: "";
+}
+
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: #5469d4;
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  transform-origin: 10.4px 10.2px;
+  -webkit-animation: loading 2s infinite ease 1.5s;
+  animation: loading 2s infinite ease 1.5s;
+}
+
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: #5469d4;
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  transform-origin: 0px 10.2px;
+  -webkit-animation: loading 2s infinite ease;
+  animation: loading 2s infinite ease;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  form {
+    width: 80vw;
+    min-width: initial;
+  }
+}
 * {
   margin: 0;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -13,39 +132,51 @@
   border-bottom: #d6aa3a solid 2px;
   min-height: 6.5rem;
 }
+
 .bg_header .header {
   display: flex;
   max-width: 100%;
   align-items: center;
 }
+
 .bg_header .header img {
   margin-left: 7rem;
   width: 165px;
   height: 120px;
+  -o-object-fit: contain;
   object-fit: contain;
 }
+
 .bg_header .header nav {
   width: 100%;
 }
+
 .bg_header .header nav ul {
   margin-left: 10rem;
   display: flex;
   font-size: 3rem;
 }
+
 .bg_header .header nav ul li {
   list-style: none;
   text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 6%;
 }
+
 .bg_header .header nav ul li a {
   color: #d6aa3a;
   display: block;
   text-decoration: none;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 3rem 0;
 }
+
 .bg_header .header nav ul li a:hover {
   text-decoration: underline;
 }
@@ -55,15 +186,18 @@
   background-color: #0b3939;
   text-align: center;
 }
+
 .footer nav p {
   color: #d6aa3a;
   font-size: 1rem;
   padding: 1rem;
 }
+
 .footer #buttons {
   display: flex;
   justify-content: center;
 }
+
 .footer #buttons a {
   display: block;
   text-decoration: none;
@@ -71,6 +205,7 @@
   font-size: 2rem;
   padding: 1rem;
 }
+
 .footer #buttons a:hover {
   text-decoration: underline;
 }
@@ -78,6 +213,7 @@
 main {
   /*accueil*/
 }
+
 main .add {
   display: inline-block;
   margin: auto;
@@ -89,55 +225,70 @@ main .add {
   width: 85px;
   cursor: pointer;
 }
+
 main .img_presentation {
   display: flex;
 }
+
 main .img_presentation .img1 {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 30%;
   height: 300px;
   margin: 3rem 0 3rem 15rem;
 }
+
 main .img_presentation .img2 {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 10%;
   height: 300px;
   margin: 3rem 1rem;
 }
+
 main .img_presentation .img3 {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 30%;
   height: 300px;
   margin: 3rem 1rem;
 }
+
 main .presentation {
   font-size: 2.5rem;
   text-align: center;
   color: #976E04;
 }
+
 main article {
   font-size: 1.5rem;
   padding: 5rem 15rem;
 }
+
 main article .atelier {
   margin: auto;
   text-align: justify;
   color: rgb(12, 66, 49);
 }
+
 main article .atelier h1 {
   margin: 2rem 0;
   text-decoration: underline;
   color: #d6aa3a;
 }
+
 main article .atelier .content {
   display: flex;
 }
+
 main article .atelier .content img {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 30%;
   height: 250px;
   border: #d6aa3a solid 2px;
 }
+
 main article .atelier .content p {
   padding-left: 2rem;
 }
@@ -148,6 +299,7 @@ main article .atelier .content p {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .produits a {
   display: inline-block;
   margin: auto;
@@ -159,6 +311,7 @@ main article .atelier .content p {
   width: 85px;
   cursor: pointer;
 }
+
 .produits h2,
 .produits li,
 .produits p {
@@ -170,30 +323,38 @@ main article .atelier .content p {
   font-size: 1rem;
   padding: 1rem;
 }
+
 .produits h2 {
   font-size: 1.5rem;
 }
+
 .produits p {
   width: 70%;
 }
+
 .produits .savon {
   display: flex;
   flex-direction: column;
   margin: 2rem;
   width: 40%;
 }
+
 .produits .savon .imgNom {
   height: 100px;
   margin: 3rem auto;
+  -o-object-fit: contain;
   object-fit: contain;
   max-width: 100%;
 }
+
 .produits .savon .img {
   height: 150px;
   margin: 3rem auto;
+  -o-object-fit: contain;
   object-fit: contain;
   max-width: 100%;
 }
+
 .produits .savon .prix {
   display: block;
   max-width: 200px;
@@ -204,6 +365,7 @@ main article .atelier .content p {
   font-size: 1.5rem;
   padding: 3rem;
 }
+
 .produits .savon .design {
   display: block;
   color: #0b3939;
@@ -238,22 +400,26 @@ p#scroll.visible {
   display: flex;
   justify-content: space-around;
 }
+
 .contact .liste {
   margin: auto;
   padding-left: 7rem;
 }
+
 .contact .liste h2 {
   text-decoration: underline;
   padding: 3rem 0;
   color: #976E04;
   font-size: 2rem;
 }
+
 .contact .liste ul li {
   color: #0b3939;
   font-size: 1.5rem;
   padding: 0.5rem;
   list-style: none;
 }
+
 .contact .liste ul li a {
   background-color: transparent;
   border: none;
@@ -263,9 +429,11 @@ p#scroll.visible {
   padding: 1rem;
   cursor: pointer;
 }
+
 .contact .liste ul li a:hover {
   text-decoration: underline;
 }
+
 .contact iframe {
   margin: 7rem 12rem 10rem 2rem;
   border: #d6aa3a solid 2px;
@@ -277,6 +445,8 @@ p#scroll.visible {
   }
   .bg_header .header nav ul {
     display: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .bg_header .header nav ul.visible {
@@ -357,6 +527,8 @@ p#scroll.visible {
   }
   .bg_header .header nav ul {
     display: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .bg_header .header nav ul.visible {
@@ -410,6 +582,7 @@ p#scroll.visible {
   main .img_presentation .img1,
   main .img_presentation .img2,
   main .img_presentation .img3 {
+    -o-object-fit: contain;
     object-fit: contain;
     margin: 1rem;
     width: 50%;
@@ -456,6 +629,8 @@ p#scroll.visible {
   }
   .bg_header .header nav ul {
     display: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .bg_header .header nav ul.visible {
@@ -509,6 +684,7 @@ p#scroll.visible {
   main .img_presentation .img1,
   main .img_presentation .img2,
   main .img_presentation .img3 {
+    -o-object-fit: contain;
     object-fit: contain;
     margin: 1rem;
     width: 50%;
@@ -531,6 +707,7 @@ p#scroll.visible {
   }
   main.produits div .savon .imgNom {
     margin: 0;
+    -o-object-fit: contain;
     object-fit: contain;
     width: 100%;
   }
@@ -557,5 +734,6 @@ p#scroll.visible {
     padding: 0;
   }
 }
+
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-<div class="savon">
+<div class="savon" id="<?= $product["id"] ?>">
 <?php
     if ($_SESSION && $_SESSION["connected"]) {
 ?>

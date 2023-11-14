@@ -7,11 +7,13 @@ require_once('./controllers/homeController.php');
 require_once('./controllers/productController.php');
 require_once('./controllers/adminController.php');
 require_once('./controllers/contactController.php');
+require_once('./controllers/stripeController.php');
 
 use controllers\AdminController;
 use controllers\HomeController;
 use controllers\ProductController;
 use controllers\ContactController;
+use controllers\StripeController;
 
 get('/deconnexion', function(){
     session_destroy();
@@ -67,7 +69,13 @@ post('/inscription', function(){
     $controller = new AdminController();
     $controller->signin();
 });
+
 get('/contact', function() {
     $controller = new ContactController();
     $controller->get();
+});
+
+post('/achat', function() {
+    $controller = new StripeController();
+    $controller->intent();
 });
