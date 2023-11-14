@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-  filter: contrast(115%);
+  filter: contrast(200%);
 }
 
 button:disabled {
@@ -311,7 +311,7 @@ main article .atelier .content p {
   width: 40%;
 }
 .produits .savon .imgNom {
-  height: 100px;
+  height: 70px;
   margin: 3rem auto;
   -o-object-fit: contain;
      object-fit: contain;
@@ -334,13 +334,35 @@ main article .atelier .content p {
   font-size: 1.5rem;
   padding: 3rem;
 }
-.produits .savon .design {
+.produits .savon .hide {
+  display: none;
+}
+
+#voil {
+  position: fixed;
+  opacity: 0.5;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#modal {
+  position: absolute;
+  background-color: #d6aa3a;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -25%);
+}
+#modal .design {
+  width: 20rem;
   display: block;
   color: #0b3939;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin: auto;
-  font-size: 1rem;
+  font-size: 1.3rem;
   white-space: break-spaces;
 }
 
@@ -476,6 +498,13 @@ main .img_presentation .img3 {
   main article .atelier .content p {
     padding-left: 0;
   }
+  main .produits .savon .imgNom,
+main .img {
+    margin: 1rem auto;
+  }
+  main .prix {
+    padding: 1rem;
+  }
   footer nav #buttons {
     flex-direction: column;
   }
@@ -567,6 +596,12 @@ main .img_presentation .img3 {
   }
   .produits .savon {
     width: 100%;
+  }
+  .produits .savon .imgNom, .produits .savon .img {
+    margin: 1rem auto;
+  }
+  .produits .savon .prix {
+    padding: 1rem;
   }
   .contact .liste {
     width: 40%;
@@ -668,10 +703,16 @@ main .img_presentation .img3 {
     width: 100%;
   }
   main.produits div .savon .imgNom {
-    margin: 0;
+    margin: 1rem auto;
     -o-object-fit: contain;
        object-fit: contain;
     width: 100%;
+  }
+  main.produits div .savon .img {
+    margin: 1rem auto;
+  }
+  main.produits div .savon .prix {
+    padding: 1rem;
   }
   main .contact {
     flex-direction: column;

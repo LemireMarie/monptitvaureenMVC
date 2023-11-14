@@ -46,3 +46,34 @@ window.addEventListener("scroll", () => {
 chevron.addEventListener("click", () =>{
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
+//Création d'une modale
+let savons = document.querySelectorAll(".savon")
+
+var modal = document.createElement("div")
+var para = document.querySelector(".design");
+var img = document.querySelectorAll(".img");
+var voil = document.createElement("div");
+
+
+for (const singleSavon of savons) {
+    let imgSingle = singleSavon.querySelector(".img")
+    let singlePara = singleSavon.querySelector(".design")
+
+    imgSingle.addEventListener("click", () => {
+        if (document.querySelector("div")){
+            modal.setAttribute("id", "modal");
+            voil.setAttribute("id", "voil");
+            modal.appendChild(singlePara);
+            document.body.appendChild(voil);
+            document.body.appendChild(modal);   
+
+            singlePara.classList.remove("hide");
+    
+        }
+        }); 
+}
+// for (const imgSingle of img) {
+       
+// }
+
+document.getElementsByName("div")

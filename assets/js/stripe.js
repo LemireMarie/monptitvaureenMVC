@@ -4,8 +4,9 @@ let items;
 
 let elements;
 
-document.querySelectorAll(".savon").forEach((element) => {
-  element.addEventListener("click", () => {
+document.querySelectorAll(".payment").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
     items = [{id: element.id}]
     initialize();
     checkStatus();

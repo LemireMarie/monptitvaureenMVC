@@ -26,7 +26,7 @@
             <div class="modale">
                 <form id="payment-form">
                     <div id="payment-element"></div>
-                    <button id="submit">
+                    <button id="submit" class="payment">
                         <div class="spinner hidden" id="spinner"></div>
                         <span id="button-text">Pay now</span>
                     </button>
