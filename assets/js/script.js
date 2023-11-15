@@ -1,3 +1,4 @@
+//création du burger menu
 let burger = document.createElement("button");
 let nav = document.querySelector("nav");
 let menu = document.querySelector("ul");
@@ -27,6 +28,8 @@ burger.addEventListener("click", () => {
     menu.classList.toggle("visible");
     burger.classList.toggle("active");
 });
+
+
 //Création d' une flèche retour haut de page :
 
 let chevron = document.createElement("p");
@@ -46,14 +49,15 @@ window.addEventListener("scroll", () => {
 chevron.addEventListener("click", () =>{
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
+
+
 //Création d'une modale
 let savons = document.querySelectorAll(".savon")
-
 var modal = document.createElement("div")
 var para = document.querySelector(".design");
 var img = document.querySelectorAll(".img");
 var voil = document.createElement("div");
-
+let bouton = document.createElement("button");
 
 for (const singleSavon of savons) {
     let imgSingle = singleSavon.querySelector(".img")
@@ -64,16 +68,35 @@ for (const singleSavon of savons) {
             modal.setAttribute("id", "modal");
             voil.setAttribute("id", "voil");
             modal.appendChild(singlePara);
+            bouton.setAttribute("id","close")
+            modal.appendChild(bouton)
+            bouton.innerText = "X"
             document.body.appendChild(voil);
             document.body.appendChild(modal);   
 
             singlePara.classList.remove("hide");
-    
+            voil.classList.remove("hide")
+            bouton.classList.remove("hide")
         }
-        }); 
+        //la modale disparait au clic sur le voile
+        voil.addEventListener("click", () =>{
+            if (document.querySelector("div")){
+                singlePara.classList.add("hide");
+                voil.classList.add("hide");
+                bouton.classList.add("hide");
+            }
+        })
+        //bouton close :
+        bouton.addEventListener("click", () =>{
+            if (document.querySelector("div")){
+                singlePara.classList.add("hide");
+                voil.classList.add("hide");
+                bouton.classList.add("hide")
+            }
+        })
+    });
+    
+    
 }
-// for (const imgSingle of img) {
-       
-// }
-
 document.getElementsByName("div")
+

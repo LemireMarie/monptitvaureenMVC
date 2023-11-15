@@ -289,6 +289,9 @@ main {
 }
 
 /*produits*/
+.hide {      
+    display: none !important;
+}
 .produits {
     display: flex;
     flex-wrap: wrap;
@@ -354,11 +357,6 @@ main {
             font-size: 1.5rem;
             padding: 3rem;
         }
-
-        .hide {
-         
-            display: none;
-        }
     }
 }
 #voil{
@@ -372,20 +370,28 @@ main {
 }
 
 #modal{
-    position: absolute;
+    position: fixed;
     background-color: $secondary;
     top: 50%;
-    left: 50%;
+    left: 35%;
     transform: translate(-25%, -25%);
     .design {
-        width: 20rem;
         display: block;
         color: $primary;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         margin: auto;
+        padding: 2rem;
         font-size: 1.3rem;
         white-space: break-spaces;
+    }
+    #close{
+        position: absolute;
+        right: 1%;
+        top: 1%;
+        width: auto;
+        background-color: $primary;
+        color: $secondary;
     }
 }
 
