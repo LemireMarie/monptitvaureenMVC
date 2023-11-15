@@ -152,7 +152,8 @@ $secondary: #d6aa3a;
 
         nav {
             width: 100%;
-            ul {
+/*             position: fixed;
+ */            ul {
             margin-left: 10rem;
                 display: flex;
                 font-size: 3rem;
@@ -173,6 +174,17 @@ $secondary: #d6aa3a;
 
                         &:hover {
                             text-decoration: underline;
+                        }
+                    }
+                    .sous-menu{
+/*                      position: sticky; */  
+                        display: flex;
+                        flex-direction: column;
+                        li{
+                            font-size: 2rem;
+                            a{                        
+                                padding: 1rem 0;
+                        }
                         }
                     }
                 }

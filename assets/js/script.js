@@ -29,7 +29,43 @@ burger.addEventListener("click", () => {
     burger.classList.toggle("active");
 });
 
+//création d'un sous-menu
 
+//création du burger menu
+
+let prod = document.querySelector(".products");
+//au clic sur produit déployer le sous menu
+
+/* let burger = document.createElement("button");
+let nav = document.querySelector("nav");
+let menu = document.querySelector("ul");
+const imgHeader = document.querySelector(".header img");
+const callback = () => {
+    if (window.innerWidth < 580){
+        imgHeader.classList.add("hidden")
+    }
+    else{
+        imgHeader.classList.remove("hidden")
+    }
+    if(window.innerWidth < 1212 ){
+        burger.classList.add("visible");
+        nav.appendChild(burger);
+
+    }
+    else{
+        burger.remove();
+    }
+}
+
+window.addEventListener("resize", callback);
+
+window.addEventListener("load", callback);
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("visible");
+    burger.classList.toggle("active"); = prod.classList.toggle("active");
+
+}); */
 //Création d' une flèche retour haut de page :
 
 let chevron = document.createElement("p");

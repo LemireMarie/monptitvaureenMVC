@@ -149,6 +149,8 @@ button:disabled {
 
 .bg_header .header nav {
   width: 100%;
+  /*             position: fixed;
+   */
 }
 
 .bg_header .header nav ul {
@@ -179,6 +181,20 @@ button:disabled {
 
 .bg_header .header nav ul li a:hover {
   text-decoration: underline;
+}
+
+.bg_header .header nav ul li .sous-menu {
+  /*                      position: sticky; */
+  display: flex;
+  flex-direction: column;
+}
+
+.bg_header .header nav ul li .sous-menu li {
+  font-size: 2rem;
+}
+
+.bg_header .header nav ul li .sous-menu li a {
+  padding: 1rem 0;
 }
 
 .footer {
