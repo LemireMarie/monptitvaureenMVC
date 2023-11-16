@@ -29,43 +29,32 @@ burger.addEventListener("click", () => {
     burger.classList.toggle("active");
 });
 
-//création d'un sous-menu
-
-//création du burger menu
-
-let prod = document.querySelector(".products");
 //au clic sur produit déployer le sous menu
 
-/* let burger = document.createElement("button");
-let nav = document.querySelector("nav");
-let menu = document.querySelector("ul");
-const imgHeader = document.querySelector(".header img");
-const callback = () => {
-    if (window.innerWidth < 580){
-        imgHeader.classList.add("hidden")
-    }
-    else{
-        imgHeader.classList.remove("hidden")
-    }
-    if(window.innerWidth < 1212 ){
-        burger.classList.add("visible");
-        nav.appendChild(burger);
+let prod = document.querySelector(".products");
+let sMenu = document.createElement("ul");
+sMenu.setAttribute("class", "sousMenu hide")
+prod.append(sMenu)
 
-    }
-    else{
-        burger.remove();
-    }
-}
+let savon = document.createElement("li")
+savon.innerText = "Savons"
+sMenu.append(savon)
 
-window.addEventListener("resize", callback);
+let gom = document.createElement("li")
+gom.innerText = "Gommages"
+sMenu.append(gom)
 
-window.addEventListener("load", callback);
+let shamp = document.createElement("li")
+shamp.innerText = "Shampoings"
+sMenu.append(shamp)
 
-burger.addEventListener("click", () => {
-    menu.classList.toggle("visible");
-    burger.classList.toggle("active"); = prod.classList.toggle("active");
 
-}); */
+prod.addEventListener("click", () =>{
+
+    prod.appendChild(sMenu)
+    sMenu.classList.toggle("hide");
+})
+
 //Création d' une flèche retour haut de page :
 
 let chevron = document.createElement("p");

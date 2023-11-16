@@ -6,14 +6,7 @@
                 <nav>
                     <ul>
                         <li><a href="/" title="redirection vers la page d'accueil">Accueil</a></li>
-                        <li>
-                            <a class="products" href="#" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a>
-                            <ul class="sous-menu">
-                                <li><a href="#">Nos&nbsp;savons</a></li>
-                                <li><a href="#">Nos&nbsp;gommages</a></li>
-                                <li><a href="#">Nos&nbsp;shampoings</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="products" href="#" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
                         <li><a href="/contact" title="redirection vers la page de contact">Contact</a></li>
                     </ul>
                 </nav>
