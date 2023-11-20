@@ -6,7 +6,7 @@
                         <p><a href="/connexion">Connexion</a></p>
                         <!-- <p><a href="/inscription">Inscription</a></p> -->
                     <?php } else { ?>
-                        <p><a href="/deconnexion">Deconnexion</a></p>
+                        <p><a href="/deconnexion">Déconnexion</a></p>
                     <?php } ?>
                     <p><a href="#">Mentions légales</a></p>        
                     <p><a href="#">Partenaires</a></p>

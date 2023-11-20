@@ -29,6 +29,25 @@ get('/produits', function(){
     $controller->get();
 });
 
+
+
+get('/savons', function(){
+    $controller = new ProductController();
+    $controller->get();
+});
+
+get('/gommages', function(){
+    $controller = new ProductController();
+    $controller->get();
+});
+
+get('/shampoings', function(){
+    $controller = new ProductController();
+    $controller->get();
+});
+
+
+
 post('/produit/add', function(){
     $controller = new ProductController();
     $controller->add();

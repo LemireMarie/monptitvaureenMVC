@@ -36,5 +36,4 @@ abstract class AbstractModel
         $exec->execute();
         return $exec->fetch(PDO::FETCH_ASSOC);
     }
-
 }
