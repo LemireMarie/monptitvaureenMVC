@@ -9,11 +9,18 @@ if($_SESSION && $_SESSION["connected"]){
 ?>
     <h1>Formulaire d'ajout ou de modification de produits</h1>
     <form action="/<?= $url ?>" method="POST" enctype="multipart/form-data">
-        <input type="text" value="<?= $products ? $products['nom'] : "" ?>" name="nom" placeholder="Le nom du produit">
+        <label for="nom">Nom du produit</label>
+        <input type="text" value="<?= $products ? $products['nom'] : "" ?>" name="nom" id="nom" placeholder="Le nom du produit">
+        <label for="imgNom">Image du nom du produit</label>
         <input type="file" value="<?= $products ? $products['imgNom'] : "" ?>" name="imgNom" id="imgNom" placeholder="La photo du nom du produit">
-        <input type="file" value="<?= $products ? $products['img'] : "" ?>" name="img" placeholder="L'image du produit">
-        <input type="number" value="<?= $products ? $products['prix'] : "" ?>" step="0.01" name="prix" placeholder="19.99">
+        <label for="img">Photo du produit</label>
+        <input type="file" value="<?= $products ? $products['img'] : "" ?>" name="img" id="img" placeholder="L'image du produit">
+        <label for="prix">Prix</label>
+        <input type="number" value="<?= $products ? $products['prix'] : "" ?>" step="0.01" name="prix" id="prix" placeholder="19.99">
+        <label for="design">Description du produit</label>
         <textarea name="design" name="design" id="design" cols="30" rows="20"><?= $products ? $products['design'] : "" ?></textarea>
+        <label for="categorie">Type de produit</label>
+        <input type="text" value="<?= $products ? $products['categorie'] : "" ?>" name="categorie" id="categorie">
         <button type="submit">Envoyer le produit</button>
     </form>
 </body>

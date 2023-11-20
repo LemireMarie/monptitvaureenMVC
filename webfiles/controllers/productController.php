@@ -23,7 +23,7 @@ class ProductController extends CommonService
     {
         $imageLinks = $this->processFiles();
         $model = new ProductModel();
-        $model->add($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1]);
+        $model->add($_POST["nom"], $_POST["prix"], $_POST["design"], $imageLinks[0], $imageLinks[1], $_POST["categorie"]);
         header('Location: /produits');
     }
 
@@ -45,7 +45,7 @@ class ProductController extends CommonService
         }
 
 
-        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageNomLink, $imageLink, $id);
+        $model->update($_POST["nom"], $_POST["prix"], $_POST["design"], $imageNomLink, $imageLink, $_POST["categorie"], $id);
         header('Location: /produits');
     }
 

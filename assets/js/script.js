@@ -37,16 +37,28 @@ sMenu.setAttribute("class", "sousMenu hide")
 prod.append(sMenu)
 
 let savon = document.createElement("li")
-savon.innerText = "Savons"
+let savLink = document.createElement("a")
+savLink.setAttribute("href", "./savons")
+savLink.setAttribute("title", "redirection vers la page sur nos savons")
+savLink.innerText = "Savons"
 sMenu.append(savon)
+savon.append(savLink)
 
 let gom = document.createElement("li")
-gom.innerText = "Gommages"
+let gomLink = document.createElement("a")
+gomLink.setAttribute("href", "./gommages")
+gomLink.setAttribute("title", "redirection vers la page sur nos gommages")
+gomLink.innerText = "Gommages"
 sMenu.append(gom)
+gom.append(gomLink)
 
 let shamp = document.createElement("li")
-shamp.innerText = "Shampoings"
+let shampLink = document.createElement("a")
+shampLink.setAttribute("href", "./shampoings")
+shampLink.setAttribute("title", "redirection vers la page sur nos shampoings")
+shampLink.innerText = "Shampoings"
 sMenu.append(shamp)
+shamp.append(shampLink)
 
 
 prod.addEventListener("click", () =>{
@@ -80,15 +92,15 @@ chevron.addEventListener("click", () =>{
 let savons = document.querySelectorAll(".savon")
 var modal = document.createElement("div")
 var para = document.querySelector(".design");
-var img = document.querySelectorAll(".img");
+var infos = document.querySelectorAll(".infos");
 var voil = document.createElement("div");
 let bouton = document.createElement("button");
 
 for (const singleSavon of savons) {
-    let imgSingle = singleSavon.querySelector(".img")
+    let infoSingle = singleSavon.querySelector(".infos")
     let singlePara = singleSavon.querySelector(".design")
 
-    imgSingle.addEventListener("click", () => {
+    infoSingle.addEventListener("click", () => {
         if (document.querySelector("div")){
             modal.setAttribute("id", "modal");
             voil.setAttribute("id", "voil");
