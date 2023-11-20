@@ -19,7 +19,6 @@
             <?php
             //$products provient de la class ProductView
             foreach ($products as $product) {
-                /*require("views/components/product.php");*/
                 if ($product["categorie"] === "savon") {
             ?>
                     <div class="savon" id="<?= $product["id"] ?>">

@@ -19,6 +19,15 @@ class ProductController extends CommonService
         $view->main($products);
     }
 
+    public function getCategorie($table, $categorie)
+    {
+        $model = new ProductModel();
+        $products = $model->findByCategorie($table, $categorie);
+
+        $view = new ProductView();
+        $view->main($products);
+    }
+
     public function add(): void
     {
         $imageLinks = $this->processFiles();
@@ -69,5 +78,7 @@ class ProductController extends CommonService
         $view = new ProductView();
         $view->form($product);
     }
+
+   
 
 }

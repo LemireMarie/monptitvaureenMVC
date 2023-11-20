@@ -38,4 +38,14 @@ class ProductModel extends AbstractModel {
 
         return $prepared->execute();
     }
+    public function findByCategorie($table, $categorie): false|array
+    {
+        $exec = $this->dbConnect()->prepare("SELECT * FROM products WHERE categorie = :categorie");
+        
+        $exec->bindParam(':categorie', $categorie, PDO::PARAM_STR);
+        $exec->execute();
+        $result = $exec->fetchAll(PDO::FETCH_ASSOC);
+        // var_dump($result);
+        return $result;
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace views;
 
-class ProductView 
+class  ProductView 
 {
     public function main(array $products): void
     {

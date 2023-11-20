@@ -38,7 +38,7 @@ prod.append(sMenu)
 
 let savon = document.createElement("li")
 let savLink = document.createElement("a")
-savLink.setAttribute("href", "./savons")
+savLink.setAttribute("href", "http://monptitvaureenmvc.test/produits/savons")
 savLink.setAttribute("title", "redirection vers la page sur nos savons")
 savLink.innerText = "Savons"
 sMenu.append(savon)
@@ -46,7 +46,7 @@ savon.append(savLink)
 
 let gom = document.createElement("li")
 let gomLink = document.createElement("a")
-gomLink.setAttribute("href", "./gommages")
+gomLink.setAttribute("href", "http://monptitvaureenmvc.test/produits/gommages")
 gomLink.setAttribute("title", "redirection vers la page sur nos gommages")
 gomLink.innerText = "Gommages"
 sMenu.append(gom)
@@ -54,7 +54,7 @@ gom.append(gomLink)
 
 let shamp = document.createElement("li")
 let shampLink = document.createElement("a")
-shampLink.setAttribute("href", "./shampoings")
+shampLink.setAttribute("href", "http://monptitvaureenmvc.test/produits/shampoings")
 shampLink.setAttribute("title", "redirection vers la page sur nos shampoings")
 shampLink.innerText = "Shampoings"
 sMenu.append(shamp)

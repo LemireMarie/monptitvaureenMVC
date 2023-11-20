@@ -29,24 +29,20 @@ get('/produits', function(){
     $controller->get();
 });
 
-
-
-get('/savons', function(){
+get('/produits/savons', function(){
     $controller = new ProductController();
-    $controller->get();
+    $controller->getCategorie("products", "savon");
 });
 
-get('/gommages', function(){
+get('/produits/gommages', function(){
     $controller = new ProductController();
-    $controller->get();
+    $controller->getCategorie("products", "gommage");
 });
 
-get('/shampoings', function(){
+get('/produits/shampoings', function(){
     $controller = new ProductController();
-    $controller->get();
+    $controller->getCategorie("products", "shampoing");
 });
-
-
 
 post('/produit/add', function(){
     $controller = new ProductController();
