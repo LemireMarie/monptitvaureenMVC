@@ -109,3 +109,12 @@ function setLoading(isLoading) {
     document.querySelector("#button-text").classList.remove("hidden");
   }
 }
+
+//Création de la modale de paiement
+let modale = document.querySelector(".modale")
+let voile = document.querySelector(".voile")
+let pay = document.querySelector(".payement")
+
+pay.addEventListener("click", () => {
+     
+})

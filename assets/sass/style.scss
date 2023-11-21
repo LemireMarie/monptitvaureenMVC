@@ -2,6 +2,13 @@
 $primary: #0b3939;
 $secondary: #d6aa3a;
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
 /* form {
     width: 30vw;
     min-width: 500px;
@@ -103,6 +110,26 @@ button:disabled {
     animation: loading 2s infinite ease;
 }
 
+//modale paiement
+
+/* .voile {
+    position: fixed;
+    opacity: 0.5;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modale {
+    position: fixed;
+    background-color: $secondary;
+    top: 35%;
+    left: 35%;
+    transform: translate(-25%, -25%);
+} */
+
 @-webkit-keyframes loading {
     0% {
         -webkit-transform: rotate(0deg);
@@ -132,12 +159,6 @@ button:disabled {
         width: 80vw;
         min-width: initial;
     }
-}
-
-* {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
 }
 
 .hidden {
@@ -173,7 +194,7 @@ button:disabled {
                     list-style: none;
                     text-align: center;
                     width: fit-content;
-                    padding: 0 6%;
+                    padding: 0 8%;
 
                     a {
                         color: $secondary;
@@ -377,7 +398,7 @@ main {
             position: absolute;
             width: auto;
             left: 44%;
-            top: 70%;
+            top: 65%;
             background-color: $primary;
             color: $secondary;
         }
@@ -391,6 +412,13 @@ main {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.5rem;
             padding: 3rem;
+        }
+        input{
+            width: 5rem;
+            text-align: center;
+            border: $primary solid 1px;
+            border-radius: 5px;
+            margin: auto;
         }
     }
 }

@@ -16,6 +16,7 @@
     <img class="img" loading="lazy" src="<?= $product["img"] ?>" alt="Notre savon le <?= $product["nom"] ?>">
     <button class="infos">+ d'infos</button>
     <p class="prix"><?= $product["prix"] ?> € les&nbsp100gr</p>
+    <input type="number" name="quantity" id="quantity" placeholder="Quantité">
     <p class="design hide"><?= $product["design"] ?></p>
 <?php
 }
