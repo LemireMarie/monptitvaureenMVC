@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/assets/img/logo2.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/script.js" defer></script>
-    <!-- <script src="https://js.stripe.com/v3/"></script>
-    <script src="/assets/js/stripe.js" defer></script> -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/assets/js/stripe.js" defer></script>
     <title>Mon P'tit Vauréen</title>
 </head>

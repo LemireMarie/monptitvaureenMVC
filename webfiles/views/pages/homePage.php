@@ -6,7 +6,7 @@
                 <nav>
                     <ul>
                         <li><a href="#" title="redirection vers la page d'accueil">Accueil</a></li>
-                        <li><a class="products" href="/produits" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
+                        <li><a class="products" href="#" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
                         <li><a href="/contact" title="redirection vers la page de contact">Contact</a></li>
                     </ul>
                 </nav>

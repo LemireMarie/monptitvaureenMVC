@@ -6,7 +6,7 @@
                 <nav>
                     <ul>
                         <li><a href="/" title="redirection vers la page d'accueil">Accueil</a></li>
-                        <li><a class="products" href="/produits" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
+                        <li><a class="products" href="#" title="redirection vers la page sur nos produits">Nos&nbsp;produits</a></li>
                         <li><a href="#" title="redirection vers la page de contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -18,9 +18,14 @@
            <div class="liste">
             <h2>Liste de nos points de vente&nbsp;: </h2>
             <ul>
-                <li>Mon P'tit Vauréen 5 rue du pas 81500 Lavaur</li>
-                <li>Les Jardins D'en Olivier La Baillé 81390 Saint-Gauzens</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Maison Pinel à Lavaur</li>
+                <li>Les Jardins D'en Olivier St Sulpice la pointe</li>
+                <li>Office de tourisme de Lavaur</li>
+                <li>Les ruchers de Mathieu à Lavaur</li>
+                <li>La Fabric' de Dom</li>
+                <li>Du bonheur en vrac à Puylaurens</li>
+                <li>Mon salon de coiffure mixte à Ambres</li>
+                <li>Camelia Esthétique à St Antonin Noble Val</li>
             </ul>
             <h2>Pour les demandes personnalisées :</h2>
             <ul>
